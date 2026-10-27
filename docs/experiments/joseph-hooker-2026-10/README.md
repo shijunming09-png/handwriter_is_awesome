@@ -16,6 +16,10 @@ CER 下降 **16.25 个百分点**，相对下降 **29.20%**。72 行中，52 行
 
 统计输入按页列于 [metrics.json](metrics.json)。安装 NumPy 后可运行 `python verify_metrics.py`，重新计算总 CER 和上述区间。逐页汇总支持复算统计，但不能独立验证参考文字或模型输出。
 
+![从公开逐页汇总生成的CER对照图](page-cer.svg)
+
+此图由公开汇总生成，不是软件截图或新增实验；`n` 表示该页纳入行数。[截图与测试执行记录](../../testing/README.md) 另行列出其功能验证范围。
+
 ## 数据与方法
 
 - 来源：[JosephHookerHTR](https://github.com/jschaefer738b/JosephHookerHTR/tree/ece582973283818621e956163f295fcde672786c)，固定提交 `ece582973283818621e956163f295fcde672786c`。仓库提供 JPG 原图和 PAGE XML 转写；其说明称许多转写由项目志愿者制作。

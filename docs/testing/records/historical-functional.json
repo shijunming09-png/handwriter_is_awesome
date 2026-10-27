@@ -1,0 +1,122 @@
+{
+  "kind": "redacted_historical_functional_evidence",
+  "version_scope": "Historical Handwriter 2.0 with the old label encoding; not a new GPU acceptance run of the encoding fix.",
+  "is_current_ci": false,
+  "is_independent_human_acceptance": false,
+  "redaction_method": "Whitelist of original status/count/integrity fields; local paths, identities, transcriptions, predictions and polygons omitted.",
+  "dataset_pipeline": {
+    "status": "passed",
+    "scope": "synthetic functional data-pipeline acceptance only; no handwriting accuracy claim; no training run",
+    "synthetic": true,
+    "handwriting_accuracy_evaluated": false,
+    "training_performed": false,
+    "source_pdf_valid": true,
+    "production_pdf_rendering_dpi": 300,
+    "source_pages": 5,
+    "eligible_lines": 150,
+    "production_gate_enforced": true,
+    "worker_smoke_bypass": false,
+    "counts": {
+      "test": 30,
+      "validation": 30,
+      "train": 90
+    },
+    "page_groups_do_not_cross_splits": true
+  },
+  "cancel_resume_backend": {
+    "success": true,
+    "stages": [
+      "cancelled",
+      "cancelled",
+      "completed"
+    ],
+    "global_step": 1,
+    "optimizer_step_events": 1,
+    "checkpoint_hashes_verified": true,
+    "no_extra_training_after_epoch_completion": true,
+    "network_attempts": []
+  },
+  "packaged_training": {
+    "status": "completed",
+    "improved": false,
+    "peak_gpu_mb": 1459.95,
+    "smoke": true,
+    "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "trainable_parameters": 761856,
+    "target_modules": 48,
+    "amp": "bfloat16",
+    "epochs": 1,
+    "global_step": 1,
+    "adapter_updated": true,
+    "network_attempts": [],
+    "offline_verified": true,
+    "release_acceptance": {
+      "packaged_exe_exit_code": 0,
+      "checkpoint_hashes_verified": true,
+      "published_manifest_verified": true,
+      "no_automatic_activation": true,
+      "explicit_activation_and_revert_verified": true,
+      "scope": "one-step public handwriting functional smoke; no personal-writer improvement claim"
+    }
+  },
+  "resume_equivalence": {
+    "success": true,
+    "maximum_adapter_difference": 0.0,
+    "compared_tensors": 96,
+    "continuous_steps": 2,
+    "resumed_steps": 2,
+    "network_attempts": [],
+    "optimizer_and_rng_restored": true
+  },
+  "source_engine_cpu_reload": {
+    "success": true,
+    "device": "CPU",
+    "engine_device": "cpu",
+    "forced_cpu_test": true,
+    "status": "recognized",
+    "network_attempts": [],
+    "elapsed": 11.596,
+    "test_source": "source engine forced CPU for packaged-trained merged model"
+  },
+  "packaged_ocr": {
+    "base": {
+      "success": true,
+      "offline": true,
+      "network_attempts": [],
+      "qt_version": "6.12.0",
+      "gui_libraries_loaded": true,
+      "desktop_classes_imported": true,
+      "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "elapsed_seconds": 12.75,
+      "export_content_and_order_match": true,
+      "page_count": 1,
+      "line_count": 3,
+      "docx_export_recorded": true,
+      "txt_export_recorded": true
+    },
+    "personal": {
+      "success": true,
+      "offline": true,
+      "network_attempts": [],
+      "qt_version": "6.12.0",
+      "gui_libraries_loaded": true,
+      "desktop_classes_imported": true,
+      "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "elapsed_seconds": 12.27,
+      "export_content_and_order_match": true,
+      "page_count": 1,
+      "line_count": 3,
+      "docx_export_recorded": true,
+      "txt_export_recorded": true
+    }
+  },
+  "unpublished_original_file_sha256": {
+    "dataset.json": "64b2ddff7a3039c5f3ee8f07029510ec49a3e0dc17dab85b87f42918c7b3af0b",
+    "backend.json": "0bba20a00517ecc5945bb514087cf4ec99e0e94166ad8014a63f085836c84df8",
+    "packaged-training.json": "32968ab97e6f8086ac7fc3daaaa97dd2706b939c307434358ce7a45b2049445b",
+    "resume-equivalence.json": "ce078f8f3906387de259b4e54cb597a6449c9089a2908cec17202c8764fc8e33",
+    "personal-cpu-reload.json": "3baf0866b3b9a565d8310df7ca7777f556b6dab3905e9b2b570fec23689a2eaf",
+    "packaged-base-ocr.json": "458cb03de69ac3969e5abd4f80a21ad12c72a957d101524aeee2eb343f50dadf",
+    "packaged-personal-ocr.json": "4c3e818fd006b6b4f68ae39bb77ea9a2d31297a4a56530308072a616f9be03b7"
+  }
+}

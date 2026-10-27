@@ -1,0 +1,73 @@
+{
+  "kind": "local_pytest_execution",
+  "application_source_ref": "8cd0f3ec140bdee35c802598d0feff03e0f4730f",
+  "started_at_utc": "2026-10-27T10:33:51.192733+00:00",
+  "finished_at_utc": "2026-10-27T10:34:40.147739+00:00",
+  "exit_code": 0,
+  "counts": {
+    "tests": 79,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "elapsed_wall_seconds": 48.95,
+  "python_version": "3.12.10",
+  "system": "Windows",
+  "command": "python -m pytest tests -q --junitxml <OUTPUT>/pytest-junit.xml --basetemp <OUTPUT>/pytest-temp",
+  "environment": {
+    "QT_QPA_PLATFORM": "offscreen",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "redactions": [
+    "Removed JUnit hostname",
+    "Replaced local workspace paths with <LOCAL_WORKSPACE>",
+    "Normalized public text line endings to LF"
+  ],
+  "is_github_actions": false,
+  "is_human_gui_acceptance": false,
+  "training_or_accuracy_experiment": false,
+  "source_file_sha256": {
+    "handwriter/__init__.py": "01984b86b7328bfb567227a99c8122a2359d65bab2964a39a4bd04f6bf46c928",
+    "handwriter/__main__.py": "48d1e586e505483b1c5fb2c6d6b557afe57565848d49c7ebe7cc76c55cc5d6e8",
+    "handwriter/canvas.py": "1ba9c2c4e2a31dc56b0b48301be5dfe09fad189083884a07098f7ff6f918f358",
+    "handwriter/data.py": "ca744bb1d83a6deb5ad3777bf067fa2e738411b89e92549b5e63f4e8b1912fa3",
+    "handwriter/engine.py": "ba9a52f7b41d6b48211b7b672d54b289104bede0a690e26bab828cbe2f6c64df",
+    "handwriter/exporter.py": "3f4d8465161fd5f872eeccc3d5b5192d2a6a6ac50bcc90e916b57c88370204c0",
+    "handwriter/gui.py": "e5f80603932ebb3c55954a2811901a867b90bfc7d6719683aa4d28aa05ab6a2e",
+    "handwriter/label_encoding.py": "2b1a3f58bb394cff10a037acde0a6e99a8253c923f323c13ab528fdd08bc6cac",
+    "handwriter/learning.py": "372684dbb81c2692cb42744654ae0c98d42e705bf208074eada326560d3ad4ef",
+    "handwriter/model_manager.py": "658e6684ec29e6b6e78ce66a26a6b3d99aec9532e822bc03e14b036cfeaa4091",
+    "handwriter/model_validation.py": "3ce6cac3097cd1cb18460a49a9551fff8a78372f13b6f435906c81110ecf5a8e",
+    "handwriter/paths.py": "42a8b4fd1ed02321bab4560f92453831098636db517e6dd1e776ecfa50a675aa",
+    "handwriter/pdfio.py": "4c9e34f9d6a04c385cc0bcffbe52b6bd9ba1c96c80efb15f93de4030b03744b3",
+    "handwriter/smoketest.py": "8731618a8fc481b4d6c3e9b6550e30034806a014bf0cfa2fcd1b937967155a9a",
+    "handwriter/storage.py": "abaa4cbd9dcb2434fd64024016c0a45615b4c9df4f2374d66a3a87b21189acbd",
+    "handwriter/style.py": "0375adf52f5c6bd4a0b3c1ff71fbaef23697e57eb40d5bf2363ae90d4866d685",
+    "handwriter/training.py": "d5dc1f1a725a7173997ebf455545da9bb2aa263211548d893d55f3002d0dfbbd",
+    "handwriter/training_metrics.py": "a4d880ad9519264592c8554ac568670f45a80db27226d6347bc40acba6581d29",
+    "handwriter/training_ui.py": "d5cb82113a55691360143c86b489d4ca76ee1a8009c52e1319f19964d967c807",
+    "handwriter/training_worker.py": "c4f93ff19b58f1a8f54ba767309dc79d4d6213e076aee3e4e749d6f400b86f37",
+    "tests/conftest.py": "acd1920e4ceab2aec5089c24cc34f991e1b5cfcd9a765c461d5fd4ec0bd0ffd7",
+    "tests/test_engine.py": "3399f4df20e18e3741a2af4d58c9cbe4ab8295ac309ba9b20ffb4c36775f54c5",
+    "tests/test_gui_review.py": "60f1d0ed23f18ba45fcddd618948bca9b82530900f98ad4ef28257a1946e4b76",
+    "tests/test_gui_training.py": "51f65a5521515bb5ef88ef8af78ea0fa939ae99ad85546e8297ed4f416f16a21",
+    "tests/test_label_encoding.py": "c9e2693b2c16ce66383924be81475bcde23618d84d0f9d794b02af26f95781c1",
+    "tests/test_learning.py": "4e11375d812a1918952adb054695fb5a47bfee051a1b0607dc5cc2f57ff7957e",
+    "tests/test_personal_model_validation.py": "e997c273dd6e19ee7ecfd0abd0129fb0a2cab42f55e8975bd7e724314b307afa",
+    "tests/test_project_flow.py": "5bbda73bbd8dcab81042b9937a67b29d46129e35768f50fde1642a6079c65641",
+    "tests/test_task_resume.py": "1e174f078c3835289978f379c0aa02ab21b168338a8f8dca93909fbeb08409e1",
+    "tests/test_training.py": "fa278b5c73fe32c7a09959756e36a60121c3023af370a3ddd1ba2212b38bd314"
+  },
+  "private_raw_sha256": {
+    "pytest-junit.xml": "65559192dbe5ef7d89ef13d8920b5514c6091663da844b21a4969511ca560a4b",
+    "pytest-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pytest-stdout.txt": "9ff192f9f8db7794cff667c161773f7ddf3eec42d66e6e229defaca160b41863"
+  },
+  "source_hash_basis": "SHA-256 of raw local working-copy bytes; checkout line endings may differ from Git blobs.",
+  "source_ref_verification": {
+    "files_checked": 30,
+    "match_method": "Raw bytes or LF-normalized bytes matched the application source ref; checked read-only before publication.",
+    "independent_human_verification": false
+  }
+}

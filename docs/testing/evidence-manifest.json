@@ -1,0 +1,44 @@
+{
+  "prepared_at_utc": "2026-10-27T10:35:59.485350+00:00",
+  "screenshots": [
+    {
+      "file": "screenshots/training-data.png",
+      "source_basename": "training-data.png",
+      "sha256": "e06b4a54e37cd96274fb5a32b3dbfc9457627e56d5c02a66674d7f45f190ca13",
+      "unmodified_original_copy": true,
+      "scope": "Historical data gate: 3 eligible lines / 1 page, below the 150-line / 5-page gate.",
+      "version": "historical Handwriter 2.0 before the label-encoding fix",
+      "capture_timestamp_independently_verified": false
+    },
+    {
+      "file": "screenshots/training-evaluation.png",
+      "source_basename": "training-evaluation.png",
+      "sha256": "c3b6567673bc73ce52ca66c4bc6ac88d790c00b258e676f8827bcea44274a84f",
+      "unmodified_original_copy": true,
+      "scope": "Historical training tab in waiting state; no completed training or evaluation is displayed.",
+      "version": "historical Handwriter 2.0 before the label-encoding fix",
+      "capture_timestamp_independently_verified": false
+    },
+    {
+      "file": "screenshots/training-models.png",
+      "source_basename": "training-models.png",
+      "sha256": "5679b060c203298f1161f11d9cc3035f6e73b975a197d0ccc8fa7d08ae4b49e7",
+      "unmodified_original_copy": true,
+      "scope": "Historical model tab showing the base model active; no adapted model is displayed.",
+      "version": "historical Handwriter 2.0 before the label-encoding fix",
+      "capture_timestamp_independently_verified": false
+    }
+  ],
+  "current_pytest_source_ref": "8cd0f3ec140bdee35c802598d0feff03e0f4730f",
+  "public_record_sha256": {
+    "historical-functional.json": "59798a806dfa8becbdc8925735a49d4c32a0dc56d3ed43442d42382dc232ab71",
+    "pytest-junit.xml": "b1e89a6f68f617ba4b99355d1c9a9d568598fd25ff5a8eeec8eeadd589142738",
+    "pytest-stdout.txt": "73407d7801dde26148e4807a2dfd766dcf753b6a878ef0433a68439a9cc786db",
+    "pytest-summary.json": "98c8949ba0034fc8b1e41127a58998213c13722a19c868ac6a9a812a8115b8d9"
+  },
+  "limitations": [
+    "Historical screenshots show UI states, not a completed training run or accuracy gain.",
+    "Public logs are locally produced, not independently trusted timestamps or CI attestations.",
+    "Hashes of unpublished originals can only be checked by holders of those originals."
+  ]
+}

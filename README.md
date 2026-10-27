@@ -94,6 +94,8 @@ py -3.12 -m venv .venv
 
 标签编码修正版于 2026-10-27 通过 **79 项本地完整回归测试**，包括新增编码和旧检查点兼容性测试。详见 [修复说明](docs/LABEL_ENCODING.md)。
 
+[测试证据与截图](docs/testing/README.md) 汇集历史训练界面截图、重新执行的 79 项测试输出与 JUnit 记录、脱敏历史功能记录及逐页 CER 图，并标明各项证据的适用范围。
+
 另有 [Joseph Hooker 书信冻结对照实验](docs/experiments/joseph-hooker-2026-10/README.md)：在经 AI 辅助筛选的 72 条新信件行图上，字符错误率由 55.64% 降至 39.39%。本仓库已包含该实验所用的标签编码修复；参考文字尚未独立人工复核，模型权重和完整实验材料未随仓库分发。
 
 运行源码测试：
@@ -217,6 +219,8 @@ Local validation performed for the Handwriter 2.0 delivery includes:
 See the [validation report (Chinese)](验证报告.txt). These are local delivery validation records, not a claim that GitHub Actions or continuous integration has passed.
 
 The label-encoding fix passed **79 locally executed regression tests** on 2026-10-27, including new encoding and legacy-checkpoint compatibility tests. See the [fix notes](docs/LABEL_ENCODING.md).
+
+See the [test evidence gallery](docs/testing/README.md) for historical UI screenshots, a fresh 79-test execution log and JUnit report, redacted historical functional records, and per-page CER visualization, each with its scope stated.
 
 A separate [Joseph Hooker correspondence evaluation](docs/experiments/joseph-hooker-2026-10/README.md) found CER decreased from 55.64% to 39.39% on 72 AI-screened line crops from held-out letters. This repository includes the label-encoding fix used in that experiment; reference transcriptions have not been independently verified by a human, and weights and full experimental materials are not distributed here.
 

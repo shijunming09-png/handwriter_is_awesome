@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="1000" height="620" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1000" height="620"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-620)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="1000" height="620" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="30" y="586" style="font-family: Helvetica; font-size: 21px;fill: rgb(9%,19%,29%); stroke:none;" transform="translate(0,1172) scale(1,-1)">Joseph Hooker: frozen comparison on screened line crops</text>
+			<text x="30" y="560" style="font-family: Helvetica; font-size: 12px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1120) scale(1,-1)">12 held-out letter IDs | 72 / 221 source lines accepted | 1,668 reference characters</text>
+			<g transform="">
+				<g transform="">
+					<rect x="190.0" y="119.71264367816092" width="401.437908496732" height="11.78160919540231" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="153.8793103448276" width="564.7368421052632" height="11.781609195402297" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="188.04597701149424" width="441.94444444444446" height="11.781609195402297" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="222.21264367816093" width="493.33333333333326" height="11.781609195402297" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="256.37931034482756" width="339.52941176470586" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="290.54597701149424" width="306.5714285714286" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="324.71264367816093" width="558.032786885246" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="358.87931034482756" width="246.66666666666663" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="393.04597701149424" width="460.983606557377" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="427.21264367816093" width="538.1818181818182" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="461.37931034482756" width="440.1558441558441" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="495.54597701149424" width="235.4545454545455" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="132.67241379310346" width="314.37908496732024" height="11.781609195402297" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="166.83908045977012" width="428.42105263157896" height="11.781609195402297" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="201.00574712643677" width="174.72222222222223" height="11.781609195402297" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="235.17241379310346" width="493.33333333333326" height="11.781609195402297" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="269.3390804597701" width="284.39215686274514" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="303.50574712643675" width="211.42857142857144" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="337.67241379310343" width="363.9344262295083" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="371.83908045977006" width="202.4875621890547" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="406.00574712643675" width="327.54098360655735" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="440.17241379310343" width="326.27272727272725" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="474.33908045977006" width="311.37662337662334" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+					<rect x="190.0" y="508.50574712643675" width="151.36363636363637" height="11.781609195402325" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+					<g transform=""/>
+				</g>
+				<g transform="">
+					<g transform="">
+						<path d="M 190,115 L 190,525 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<path d="M 190,115 L 185,115 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 190,149.166667 L 185,149.166667 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 190,183.333333 L 185,183.333333 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 190,217.5 L 185,217.5 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 190,251.666667 L 185,251.666667 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 190,285.833333 L 185,285.833333 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 190,320 L 185,320 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 190,354.166667 L 185,354.166667 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 190,388.333333 L 185,388.333333 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 190,422.5 L 185,422.5 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 190,456.666667 L 185,456.666667 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 190,490.833333 L 185,490.833333 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 190,525 L 185,525 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,185,132.083333)">
+							<text x="-59.76" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">41_001 (n=6)</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,185,166.25)">
+							<text x="-59.76" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">48_001 (n=4)</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,185,200.416667)">
+							<text x="-59.76" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">39_001 (n=5)</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,185,234.583333)">
+							<text x="-59.76" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">47_001 (n=1)</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,185,268.75)">
+							<text x="-65.32" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">197_002 (n=8)</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,185,302.916667)">
+							<text x="-59.76" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">87_001 (n=4)</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,185,337.083333)">
+							<text x="-59.76" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">24_001 (n=4)</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,185,371.25)">
+							<text x="-59.76" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">23_001 (n=9)</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,185,405.416667)">
+							<text x="-59.76" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">21_004 (n=6)</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,185,439.583333)">
+							<text x="-59.76" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">40_001 (n=9)</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,185,473.75)">
+							<text x="-65.32" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">45_002 (n=14)</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,185,507.916667)">
+							<text x="-59.76" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">74_001 (n=2)</text>
+						</g>
+					</g>
+				</g>
+				<g transform="">
+					<g transform="">
+						<path d="M 190,115 L 930,115 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<path d="M 190,115 L 190,110 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 338,115 L 338,110 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 486,115 L 486,110 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 634,115 L 634,110 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 782,115 L 782,110 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 930,115 L 930,110 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,190,110)">
+							<text x="-2.7800000000000002" y="-10.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-20) scale(1,-1)">0</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,338,110)">
+							<text x="-5.5600000000000005" y="-10.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-20) scale(1,-1)">20</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,486,110)">
+							<text x="-5.5600000000000005" y="-10.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-20) scale(1,-1)">40</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,634,110)">
+							<text x="-5.5600000000000005" y="-10.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-20) scale(1,-1)">60</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,782,110)">
+							<text x="-5.5600000000000005" y="-10.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-20) scale(1,-1)">80</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,930,110)">
+							<text x="-8.34" y="-10.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-20) scale(1,-1)">100</text>
+						</g>
+					</g>
+				</g>
+			</g>
+			<rect x="215" y="70" width="12" height="12" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+			<text x="234" y="72" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,144) scale(1,-1)">Base TrOCR</text>
+			<rect x="360" y="70" width="12" height="12" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(7%,49%,57%); fill-rule: evenodd;"/>
+			<text x="379" y="72" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,144) scale(1,-1)">Frozen adapted model</text>
+			<text x="600" y="72" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,144) scale(1,-1)">Character error rate (%) - lower is better</text>
+			<text x="30" y="42" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,84) scale(1,-1)">Micro CER: 55.64% -&gt; 39.39%; paired 95% cluster interval for reduction: 11.12-22.05 percentage points.</text>
+			<text x="30" y="22" style="font-family: Helvetica; font-size: 10px;fill: rgb(27%,33%,41%); stroke:none;" transform="translate(0,44) scale(1,-1)">AI-screened references, not independent human gold. Chart from published aggregates; not an application screenshot.</text>
+		</g>
+	</g>
+</svg>
