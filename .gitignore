@@ -1,0 +1,42 @@
+# Local documents, review data, snapshots and models
+/models/
+/projects/
+/writers/
+/logs/
+/outputs/
+*.pdf
+*.docx
+*.safetensors
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.lock
+!requirements-lock.txt
+
+# Python/build caches and portable distributions
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+*.log
+
+# Local-only IAM material; retain the provenance description
+/tests/fixtures/*
+!/tests/fixtures/SOURCES.md
+
+# Personal configuration and editor state
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

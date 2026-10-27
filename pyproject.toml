@@ -1,0 +1,22 @@
+[project]
+name = "handwriter-local"
+version = "2.0.0"
+description = "Local English handwritten PDF transcription with TrOCR"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "PySide6>=6.8,<7", "pypdfium2>=4,<6", "python-docx>=1.2,<2",
+  "opencv-python-headless>=4.10,<6", "onnxruntime>=1.20,<2",
+  "pyclipper>=1.3,<2", "Pillow>=11,<14", "numpy>=2,<3",
+  "transformers>=4.48,<5", "huggingface_hub>=0.30,<1", "safetensors>=0.5,<1",
+  "torch>=2.7,<3", "torchvision>=0.22,<1",
+  "peft==0.18.1", "accelerate>=1.10,<2",
+  "filelock>=3.16,<5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pyinstaller>=6.12,<7", "pypdf>=5", "reportlab>=4"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = ["model: requires downloaded OCR models and may take several minutes"]
