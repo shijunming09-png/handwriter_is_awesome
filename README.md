@@ -90,6 +90,8 @@ py -3.12 -m venv .venv
 
 详见 [验证报告](验证报告.txt)。上述是本地交付验证记录，不是 GitHub Actions 的持续集成状态。
 
+另有 [Joseph Hooker 书信冻结对照实验](docs/experiments/joseph-hooker-2026-10/README.md)：在经 AI 辅助筛选的 72 条新信件行图上，字符错误率由 55.64% 降至 39.39%。这是本地标签编码修正版的实验结果；该修复尚未合入本仓库主分支，参考文字尚未独立人工复核。
+
 运行源码测试：
 
 ~~~powershell
@@ -207,6 +209,8 @@ Local validation performed for the Handwriter 2.0 delivery includes:
 - The small-sample test showed no observed accuracy improvement and cannot establish performance for a real target writer.
 
 See the [validation report (Chinese)](验证报告.txt). These are local delivery validation records, not a claim that GitHub Actions or continuous integration has passed.
+
+A separate [Joseph Hooker correspondence evaluation](docs/experiments/joseph-hooker-2026-10/README.md) found CER decreased from 55.64% to 39.39% on 72 AI-screened line crops from held-out letters. It used a local label-encoding fix not yet present on this repository's main branch; reference transcriptions have not been independently verified by a human.
 
 Run the source tests with:
 

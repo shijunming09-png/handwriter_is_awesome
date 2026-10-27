@@ -1,0 +1,108 @@
+{
+  "description": "Aggregate-only data; no reference text or model output",
+  "source_commit": "ece582973283818621e956163f295fcde672786c",
+  "bootstrap_seed": 20261028,
+  "bootstrap_replicates": 20000,
+  "bootstrap_cer_reduction_ci": [
+    0.11118196767524902,
+    0.2204770886059646
+  ],
+  "pages": [
+    {
+      "page_id": "JDH_2_16_74_001",
+      "source_lines": 20,
+      "accepted_lines": 2,
+      "reference_characters": 44,
+      "baseline_character_errors": 14,
+      "candidate_character_errors": 9
+    },
+    {
+      "page_id": "JDH_2_16_45_002",
+      "source_lines": 18,
+      "accepted_lines": 14,
+      "reference_characters": 385,
+      "baseline_character_errors": 229,
+      "candidate_character_errors": 162
+    },
+    {
+      "page_id": "JDH_2_16_40_001",
+      "source_lines": 25,
+      "accepted_lines": 9,
+      "reference_characters": 220,
+      "baseline_character_errors": 160,
+      "candidate_character_errors": 97
+    },
+    {
+      "page_id": "JDH_2_16_21_004",
+      "source_lines": 14,
+      "accepted_lines": 6,
+      "reference_characters": 122,
+      "baseline_character_errors": 76,
+      "candidate_character_errors": 54
+    },
+    {
+      "page_id": "JDH_2_16_23_001",
+      "source_lines": 14,
+      "accepted_lines": 9,
+      "reference_characters": 201,
+      "baseline_character_errors": 67,
+      "candidate_character_errors": 55
+    },
+    {
+      "page_id": "JDH_2_16_24_001",
+      "source_lines": 12,
+      "accepted_lines": 4,
+      "reference_characters": 61,
+      "baseline_character_errors": 46,
+      "candidate_character_errors": 30
+    },
+    {
+      "page_id": "JDH_2_16_87_001",
+      "source_lines": 23,
+      "accepted_lines": 4,
+      "reference_characters": 70,
+      "baseline_character_errors": 29,
+      "candidate_character_errors": 20
+    },
+    {
+      "page_id": "JDH_2_16_197_002",
+      "source_lines": 17,
+      "accepted_lines": 8,
+      "reference_characters": 255,
+      "baseline_character_errors": 117,
+      "candidate_character_errors": 98
+    },
+    {
+      "page_id": "JDH_2_16_47_001",
+      "source_lines": 19,
+      "accepted_lines": 1,
+      "reference_characters": 9,
+      "baseline_character_errors": 6,
+      "candidate_character_errors": 6
+    },
+    {
+      "page_id": "JDH_2_16_39_001",
+      "source_lines": 18,
+      "accepted_lines": 5,
+      "reference_characters": 72,
+      "baseline_character_errors": 43,
+      "candidate_character_errors": 17
+    },
+    {
+      "page_id": "JDH_2_16_48_001",
+      "source_lines": 16,
+      "accepted_lines": 4,
+      "reference_characters": 76,
+      "baseline_character_errors": 58,
+      "candidate_character_errors": 44
+    },
+    {
+      "page_id": "JDH_2_16_41_001",
+      "source_lines": 25,
+      "accepted_lines": 6,
+      "reference_characters": 153,
+      "baseline_character_errors": 83,
+      "candidate_character_errors": 65
+    }
+  ]
+}
