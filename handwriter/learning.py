@@ -22,6 +22,7 @@ from PIL import Image, ImageStat
 
 from .data import DocumentProject, LineResult, PageResult, utc_now
 from .storage import load_project, project_path, save_project
+from .label_encoding import TARGET_LABEL_ENCODING, encode_target_labels
 
 log = logging.getLogger(__name__)
 _LOCK = threading.RLock()
@@ -31,12 +32,13 @@ MIN_PAGES = 5
 MIN_SPLITS = {"train": 90, "validation": 20, "test": 20}
 MAX_LABEL_TOKENS = 128
 _PREPROCESSING = {
-    "version": 1,
+    "version": 2,
     "crop": "handwriter.engine.crop_line",
     "color": "RGB",
     "image_format": "PNG",
     "labels": "Unicode NFC and outer whitespace strip; no truncation",
     "max_label_tokens_including_special_tokens": MAX_LABEL_TOKENS,
+    "target_label_encoding": TARGET_LABEL_ENCODING,
     "split": "original PDF SHA256 + page index, rendered-page equality; fixed page holdouts",
 }
 
@@ -254,7 +256,7 @@ def _label(text: str, tokenizer) -> str:
     text = unicodedata.normalize("NFC", text).strip()
     if not text:
         raise ValueError("文字为空。")
-    ids = tokenizer(text, add_special_tokens=True, truncation=False)["input_ids"]
+    ids = encode_target_labels(tokenizer, text)
     if len(ids) > MAX_LABEL_TOKENS:
         raise ValueError(f"标签超过 {MAX_LABEL_TOKENS} 个 token，请左右拆行后重新确认。")
     return text

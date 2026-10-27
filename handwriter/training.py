@@ -27,6 +27,7 @@ from PIL import Image
 
 from .model_manager import CancelledError, RECOGNIZER_DIRNAME, models_ready
 from .training_metrics import compare_evaluations, score_lines
+from .label_encoding import TARGET_LABEL_ENCODING, encode_target_labels
 
 log = logging.getLogger(__name__)
 BASE_SHA256 = "25a40cddc7e6120140a3d5b9e3dd3878a92ada7b4f312953ab22edc19c2a5acc"
@@ -35,6 +36,7 @@ TARGET_PATTERN = r"decoder\.model\.decoder\.layers\.\d+\.(self_attn|encoder_attn
 
 @dataclass(frozen=True)
 class TrainingConfig:
+    target_label_encoding: str = TARGET_LABEL_ENCODING
     rank: int = 8
     alpha: int = 16
     dropout: float = 0.05
@@ -182,7 +184,7 @@ def validate_dataset(snapshot_path: Path, processor, config: TrainingConfig, smo
         text = row.get("text")
         if not isinstance(text, str) or not text.strip() or "\n" in text or "\r" in text or "\x00" in text:
             raise ValueError("训练转写必须为非空的单行逐字文本。")
-        labels = processor.tokenizer(text, add_special_tokens=True, truncation=False)["input_ids"]
+        labels = encode_target_labels(processor.tokenizer, text)
         if len(labels) > config.max_target_tokens:
             raise ValueError(f"样本 {identifier} 超过 {config.max_target_tokens} token，请拆分文字行。")
         with Image.open(image_path) as image:
@@ -307,7 +309,8 @@ def _checkpoint(model, optimizer, scaler, state: dict, run_dir: Path):
     torch.save(value, temporary / "state.pt")
     files = {str(path.relative_to(temporary)).replace("\\", "/"): {"size": path.stat().st_size, "sha256": _sha(path)}
              for path in temporary.rglob("*") if path.is_file()}
-    _json(temporary / "checkpoint.json", {"schema_version": 1, "epoch": state["epoch"], "next_batch": state["next_batch"],
+    _json(temporary / "checkpoint.json", {"schema_version": 1, "target_label_encoding": TARGET_LABEL_ENCODING,
+                                         "epoch": state["epoch"], "next_batch": state["next_batch"],
                                          "global_step": state["global_step"], "time": _now(), "files": files})
     _replace_directory(temporary, root / "last", root)
 
@@ -319,6 +322,8 @@ def _recover_checkpoint(run_dir: Path) -> Path | None:
         os.replace(backup, last)
     if (last / "state.pt").is_file() and (last / "adapter" / "adapter_model.safetensors").is_file():
         metadata = _read(last / "checkpoint.json", {})
+        if metadata.get("target_label_encoding") != TARGET_LABEL_ENCODING:
+            raise ValueError("检查点标签编码版本不兼容，不能恢复旧训练。请创建新任务。")
         files = metadata.get("files", {})
         if "state.pt" not in files or "adapter/adapter_model.safetensors" not in files:
             raise ValueError("检查点缺少完整性记录，不能恢复。")
@@ -369,6 +374,8 @@ def _train(spec: dict, config: TrainingConfig, event, result: dict) -> dict:
              "snapshot_sha256": dataset["snapshot_sha256"], "base_model_sha256": BASE_SHA256,
              "config": asdict(config), "smoke": smoke}
     if spec.get("resume"):
+        if metadata.get("config", {}).get("target_label_encoding") != config.target_label_encoding:
+            raise ValueError("训练标签编码约定已改变，不能恢复旧检查点。请从通用模型新建训练任务。")
         if any(key in metadata and metadata[key] != value for key, value in fixed.items()):
             raise ValueError("训练配置、作者或数据快照已改变，不能恢复旧检查点。")
     metadata.update(fixed)

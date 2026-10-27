@@ -14,9 +14,12 @@ from handwriter.storage import load_project, save_project
 
 
 class Tokenizer:
+    eos_token_id = 2
+
     def __call__(self, text, **kwargs):
         assert kwargs.get("truncation") is False
-        return {"input_ids": list(range(len(text.split()) + 2))}
+        ids = list(range(10, 10 + len(text.split())))
+        return {"input_ids": [0] + ids + [2] if kwargs.get("add_special_tokens", True) else ids}
 
 
 @pytest.fixture

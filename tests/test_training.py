@@ -13,8 +13,11 @@ from handwriter.training_metrics import compare_evaluations, edit_distance, scor
 
 
 class Tokenizer:
+    eos_token_id = 2
+
     def __call__(self, text, **kwargs):
-        return {"input_ids": [0] + list(range(len(text.split()))) + [2]}
+        ids = list(range(10, 10 + len(text.split())))
+        return {"input_ids": [0] + ids + [2] if kwargs.get("add_special_tokens", True) else ids}
 
 
 def snapshot(directory: Path, count=5):
@@ -116,6 +119,50 @@ def test_small_dataset_is_allowed_only_for_internal_smoke(tmp_path):
     path, data = snapshot(tmp_path / "snapshot")
     with pytest.raises(ValueError, match="150行"):
         validate_dataset(path, SimpleNamespace(tokenizer=Tokenizer()), TrainingConfig())
+
+
+def test_worker_rejects_legacy_target_encoding_without_loading_or_changing_checkpoint(tmp_path, monkeypatch):
+    from dataclasses import asdict
+    import transformers
+    from handwriter import training
+
+    run = tmp_path / "home" / "runs" / "legacy"
+    run.mkdir(parents=True)
+    checkpoint = run / "checkpoints" / "last" / "state.pt"
+    checkpoint.parent.mkdir(parents=True)
+    checkpoint.write_bytes(b"existing optimizer checkpoint must remain unchanged")
+    legacy_config = asdict(TrainingConfig())
+    legacy_config.pop("target_label_encoding")
+    (run / "run.json").write_text(json.dumps({"config": legacy_config}), encoding="utf-8")
+    (run / "result.json").write_text('{"status":"cancelled"}', encoding="utf-8")
+    monkeypatch.setattr(training, "models_ready", lambda _: True)
+    monkeypatch.setattr(training, "_sha", lambda _: BASE_SHA256)
+    monkeypatch.setattr(transformers.TrOCRProcessor, "from_pretrained",
+                        lambda *args, **kwargs: SimpleNamespace(tokenizer=Tokenizer()))
+    monkeypatch.setattr(training, "validate_dataset", lambda *args, **kwargs: {
+        "id": "snapshot", "writer_id": "writer", "snapshot_sha256": "snapshot-hash", "samples": []})
+    monkeypatch.setattr(training, "_setup_base", lambda *args, **kwargs: pytest.fail("Model must not be loaded"))
+    spec = {"home": str(tmp_path / "home"), "run_dir": str(run), "models_dir": str(tmp_path / "models"),
+            "snapshot_path": str(tmp_path / "dataset.json"), "cancel_file": str(run / "cancel.request"),
+            "resume": True}
+    path = tmp_path / "spec.json"
+    path.write_text(json.dumps(spec), encoding="utf-8")
+    result = run_training(path)
+    assert result["status"] == "failed"
+    assert "标签编码" in result["error"]
+    assert checkpoint.read_bytes() == b"existing optimizer checkpoint must remain unchanged"
+
+
+def test_legacy_checkpoint_itself_is_rejected_before_optimizer_state_is_read(tmp_path):
+    from handwriter.training import _recover_checkpoint
+    checkpoint = tmp_path / "checkpoints" / "last"
+    (checkpoint / "adapter").mkdir(parents=True)
+    (checkpoint / "state.pt").write_bytes(b"legacy optimizer state")
+    (checkpoint / "adapter" / "adapter_model.safetensors").write_bytes(b"legacy adapter")
+    (checkpoint / "checkpoint.json").write_text('{"schema_version":1,"files":{}}', encoding="utf-8")
+    with pytest.raises(ValueError, match="标签编码版本"):
+        _recover_checkpoint(tmp_path)
+    assert (checkpoint / "state.pt").read_bytes() == b"legacy optimizer state"
 
 
 def test_cancelled_before_loading_models_persists_result_and_jsonl(tmp_path):

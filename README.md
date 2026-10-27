@@ -8,7 +8,7 @@ Windows 本地英文手写扫描 PDF 识别与个人笔迹训练工具。
 
 Local English handwritten PDF transcription and writer adaptation with TrOCR.
 
-本项目采用 AI 辅助开发。当前版本已完成识别、校对、训练和导出流程的功能验证；尚未证明对某位真实作者的识别准确率有所提升。
+本项目采用 AI 辅助开发。当前版本已完成识别、校对、训练和导出流程的功能验证，并提供 [Joseph Hooker 书信筛选行图的初步对照结果](docs/experiments/joseph-hooker-2026-10/README.md)。参考文字尚未独立人工复核，整页识别效果仍待验证。
 
 ### 可以做什么
 
@@ -75,6 +75,8 @@ py -3.12 -m venv .venv
 - 依据验证集 CER 选择最佳检查点，连续3轮不改善停止；测试集不用于优化器训练。
 - 候选模型不会自动启用，保留适配器、通用模型、正式版本和回退入口。
 
+训练标签现使用正文 token + EOS，与固定 TrOCR 的解码起始方式一致。旧编码的训练检查点不能继续恢复，请从通用模型新建训练任务；旧已完成模型仍可用于识别。详见 [标签编码修复与升级说明](docs/LABEL_ENCODING.md)。
+
 每个正式合并模型另需约1.3 GB，训练前至少预留4 GiB。150行只是实验门槛，不代表效果保证；应以同一作者未参与训练的页面评估。
 
 ### 验证范围
@@ -90,7 +92,9 @@ py -3.12 -m venv .venv
 
 详见 [验证报告](验证报告.txt)。上述是本地交付验证记录，不是 GitHub Actions 的持续集成状态。
 
-另有 [Joseph Hooker 书信冻结对照实验](docs/experiments/joseph-hooker-2026-10/README.md)：在经 AI 辅助筛选的 72 条新信件行图上，字符错误率由 55.64% 降至 39.39%。这是本地标签编码修正版的实验结果；该修复尚未合入本仓库主分支，参考文字尚未独立人工复核。
+标签编码修正版于 2026-10-27 通过 **79 项本地完整回归测试**，包括新增编码和旧检查点兼容性测试。详见 [修复说明](docs/LABEL_ENCODING.md)。
+
+另有 [Joseph Hooker 书信冻结对照实验](docs/experiments/joseph-hooker-2026-10/README.md)：在经 AI 辅助筛选的 72 条新信件行图上，字符错误率由 55.64% 降至 39.39%。本仓库已包含该实验所用的标签编码修复；参考文字尚未独立人工复核，模型权重和完整实验材料未随仓库分发。
 
 运行源码测试：
 
@@ -128,7 +132,7 @@ models、projects、writers、logs 等运行目录由 .gitignore 排除。请勿
 
 Handwriter is a local Windows desktop application for transcribing English handwriting in scanned PDFs and adapting TrOCR to an individual writer.
 
-This project uses AI-assisted development. Recognition, proofreading, training, and export workflows have been functionally validated. An improvement in recognition accuracy for a specific real-world writer has not yet been demonstrated. The application interface is currently in Chinese; English descriptions of buttons below include their original Chinese labels.
+This project uses AI-assisted development. Recognition, proofreading, training, and export workflows have been functionally validated. A [preliminary evaluation on screened Joseph Hooker correspondence line crops](docs/experiments/joseph-hooker-2026-10/README.md) is also available. Reference text has not been independently verified by a human, and end-to-end page recognition remains unevaluated. The application interface is currently in Chinese; English descriptions of buttons below include their original Chinese labels.
 
 ### Features
 
@@ -195,6 +199,8 @@ The experimental minimum is **150 eligible, explicitly verified lines across at 
 - Select the best checkpoint by validation CER and stop after 3 consecutive epochs without improvement. Test data is not used for optimizer training.
 - Candidate models are never activated automatically. Retain adapters, the general model, published versions, and a rollback option.
 
+Training labels now use text tokens followed by EOS, matching the pinned TrOCR decoder convention. Checkpoints from the old encoding cannot be resumed; start a new training run from the general model. Previously completed models remain usable for recognition. See the [label-encoding fix and migration notes](docs/LABEL_ENCODING.md).
+
 Each published merged model requires approximately another 1.3 GB. Reserve at least 4 GiB before starting training. The 150-line threshold is an experimental starting point, not an accuracy guarantee. Evaluate on held-out pages from the same writer.
 
 ### Validation
@@ -210,7 +216,9 @@ Local validation performed for the Handwriter 2.0 delivery includes:
 
 See the [validation report (Chinese)](验证报告.txt). These are local delivery validation records, not a claim that GitHub Actions or continuous integration has passed.
 
-A separate [Joseph Hooker correspondence evaluation](docs/experiments/joseph-hooker-2026-10/README.md) found CER decreased from 55.64% to 39.39% on 72 AI-screened line crops from held-out letters. It used a local label-encoding fix not yet present on this repository's main branch; reference transcriptions have not been independently verified by a human.
+The label-encoding fix passed **79 locally executed regression tests** on 2026-10-27, including new encoding and legacy-checkpoint compatibility tests. See the [fix notes](docs/LABEL_ENCODING.md).
+
+A separate [Joseph Hooker correspondence evaluation](docs/experiments/joseph-hooker-2026-10/README.md) found CER decreased from 55.64% to 39.39% on 72 AI-screened line crops from held-out letters. This repository includes the label-encoding fix used in that experiment; reference transcriptions have not been independently verified by a human, and weights and full experimental materials are not distributed here.
 
 Run the source tests with:
 

@@ -1,6 +1,6 @@
 # 仓库与发布范围
 
-此目录是经过清理的 GitHub 源码副本，目标仓库为 https://github.com/shijunming09-png/handwriter_is_awesome 。应用业务代码与已测试的 Handwriter 2.0 相同。
+此目录是经过清理的 GitHub 源码副本，目标仓库为 https://github.com/shijunming09-png/handwriter_is_awesome 。应用以 Handwriter 2.0 为基础，已纳入 [标签编码修复](LABEL_ENCODING.md) 和对应回归测试。
 
 本项目原创源码的开源许可证尚未选择，当前没有添加项目级 `LICENSE`。第三方许可见 `THIRD_PARTY_NOTICES.md` 和 `licenses/`。
 
@@ -9,4 +9,4 @@
 
 克隆并运行程序后生成的文稿和训练目录由 `.gitignore` 排除。提交前仍应检查实际暂存文件；外部自选工作目录不受本仓库规则控制。
 
-简历和项目介绍应使用实际范围：项目采用 AI 辅助开发，已完成功能与小样本训练流程验证，尚未验证特定作者的准确率提升。
+简历和项目介绍应使用实际范围：项目采用 AI 辅助开发，已完成功能与训练流程验证；[Joseph Hooker 实验](experiments/joseph-hooker-2026-10/README.md) 在 72 条助手筛选的新信件行图上观察到 CER 从 55.64% 降至 39.39%。参考文字尚未独立人工复核，不能推广为整页处理或其他作者的效果。
