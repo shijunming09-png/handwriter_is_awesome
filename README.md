@@ -1,12 +1,16 @@
 # 墨迹 Handwriter
 
+[简体中文](#简体中文) | [English](#english)
+
+## 简体中文
+
 Windows 本地英文手写扫描 PDF 识别与个人笔迹训练工具。
 
 Local English handwritten PDF transcription and writer adaptation with TrOCR.
 
 本项目采用 AI 辅助开发。当前版本已完成识别、校对、训练和导出流程的功能验证；尚未证明对某位真实作者的识别准确率有所提升。
 
-## 可以做什么
+### 可以做什么
 
 - 导入 PDF，渲染页面、校正轻微倾斜并自动检测文字行。
 - 使用 TrOCR 识别英文手写，支持原稿对照校对、行框调整、拆分、合并和选定行重新识别。
@@ -17,7 +21,7 @@ Local English handwritten PDF transcription and writer adaptation with TrOCR.
 
 优先支持单栏、基本水平排列的英文手写扫描稿。复杂多栏、表格还原、多作者管理、模型训练以外的版面重建和可搜索 PDF 不在当前范围内。
 
-## 技术
+### 技术
 
 | 环节 | 实现 |
 | --- | --- |
@@ -31,7 +35,7 @@ Local English handwritten PDF transcription and writer adaptation with TrOCR.
 
 识别优先使用可用的 NVIDIA GPU，失败时回退 CPU。当前训练功能需要 NVIDIA GPU。
 
-## 从源码运行
+### 从源码运行
 
 仓库只包含源码和说明，模型与运行库不在 Git 仓库中。首次准备模型需要网络连接。
 
@@ -47,7 +51,7 @@ py -3.12 -m venv .venv
 
 依赖包含 PyTorch CUDA 构建，下载和磁盘占用较大。GPU 需要兼容的 NVIDIA 驱动，无需另装 CUDA Toolkit。
 
-## 使用流程
+### 使用流程
 
 1. 导入英文手写 PDF，点击“开始 / 继续识别”。
 2. 对照原稿检查识别文字，必要时调整行框并重新识别。
@@ -60,7 +64,7 @@ py -3.12 -m venv .venv
 
 详细操作、旧任务兼容与便携包说明见 [使用说明](docs/PORTABLE.md)。
 
-## 训练与评估
+### 训练与评估
 
 实验门槛为至少 150 条有效确认行、5 个原稿页面，训练 / 验证 / 测试组分别至少 90 / 20 / 20 行。
 
@@ -73,7 +77,7 @@ py -3.12 -m venv .venv
 
 每个正式合并模型另需约1.3 GB，训练前至少预留4 GiB。150行只是实验门槛，不代表效果保证；应以同一作者未参与训练的页面评估。
 
-## 验证范围
+### 验证范围
 
 对应 Handwriter 2.0 交付的本地验证记录：
 
@@ -95,7 +99,7 @@ $env:QT_QPA_PLATFORM = 'offscreen'
 
 合成素材由测试自动生成。IAM 素材和转写不随仓库分发；如自行获取，请遵循 [素材来源说明](tests/fixtures/SOURCES.md)。
 
-## 打包
+### 打包
 
 ~~~powershell
 .\build.ps1
@@ -103,7 +107,7 @@ $env:QT_QPA_PLATFORM = 'offscreen'
 
 产物为 dist/Handwriter-Personal/Handwriter.exe。此步骤生成应用运行库，通用模型可随后在应用中准备；预装模型的便携交付约6.5 GiB，需保留完整文件夹。
 
-## 数据与许可
+### 数据与许可
 
 models、projects、writers、logs 等运行目录由 .gitignore 排除。请勿提交个人原稿、作者档案、训练数据、模型权重或凭据。
 
@@ -111,3 +115,115 @@ models、projects、writers、logs 等运行目录由 .gitignore 排除。请勿
 
 本项目借鉴 eScriptorium 的“校对—训练—评估”流程，采用现有 TrOCR 的 LoRA 微调，不包含 eScriptorium/Kraken 服务或其模型。
 
+---
+
+## English
+
+Handwriter is a local Windows desktop application for transcribing English handwriting in scanned PDFs and adapting TrOCR to an individual writer.
+
+This project uses AI-assisted development. Recognition, proofreading, training, and export workflows have been functionally validated. An improvement in recognition accuracy for a specific real-world writer has not yet been demonstrated. The application interface is currently in Chinese; English descriptions of buttons below include their original Chinese labels.
+
+### Features
+
+- Import PDFs, render pages, correct mild skew, and automatically detect text lines.
+- Recognize English handwriting with TrOCR, proofread alongside original images, adjust line boundaries, split or merge lines, and rerun recognition on selected lines.
+- Save and resume tasks, then export Word documents or UTF-8 TXT while preserving the original page and line order.
+- Collect explicitly verified transcriptions from one writer and manually start LoRA fine-tuning.
+- Compare the general model and candidate model using character error rate (CER), word error rate (WER), and line-by-line predictions. Explicitly activate a writer-specific model or revert to the general model.
+- Monitor training progress, cancel safely, and resume from checkpoints. Once models are prepared, recognition and training can run offline, keeping documents on the local device.
+
+The current version primarily supports single-column English handwriting with approximately horizontal lines. Complex multi-column layouts, table reconstruction, multiple-writer management, advanced layout reconstruction, and searchable PDF output are outside the current scope.
+
+### Technology
+
+| Component | Implementation |
+| --- | --- |
+| Desktop interface | Python 3.12, PySide6 |
+| PDF and page processing | pypdfium2, OpenCV |
+| Text-line detection | PP-OCRv5 mobile detector, ONNX Runtime on CPU |
+| Handwriting recognition | microsoft/trocr-base-handwritten, Transformers, PyTorch |
+| Writer adaptation | PEFT LoRA with a frozen base model; decoder attention q_proj/v_proj layers |
+| Export | python-docx, UTF-8 text |
+| Windows packaging | PyInstaller portable folder |
+
+Recognition uses an available NVIDIA GPU when possible and falls back to CPU if GPU inference fails. Training currently requires an NVIDIA GPU.
+
+### Run from source
+
+This Git repository contains source code and documentation. Model weights and application runtime binaries are not included. Initial model preparation requires an internet connection.
+
+Install Python 3.12 on Windows, then run these commands in PowerShell from the repository directory:
+
+~~~powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt --extra-index-url https://download.pytorch.org/whl/cu130
+.\.venv\Scripts\python.exe run_app.py
+~~~
+
+After launching the application, click **Prepare / Check Models (准备 / 检查模型)**. The application downloads files from the specified public model repositories and verifies the model weights. Recognition and training can then run offline without a cloud OCR account.
+
+Dependencies include a CUDA-enabled PyTorch build, so downloading and installing them requires substantial disk space. GPU use requires a compatible NVIDIA driver; a separate CUDA Toolkit installation is not required.
+
+### Workflow
+
+1. Import an English handwritten PDF and click **Start / Continue Recognition (开始 / 继续识别)**.
+2. Compare the recognized text with the original page. Adjust line boundaries and rerun recognition where necessary.
+3. Export Word or TXT. Tasks and proofreading changes are saved locally.
+4. To prepare training data, open **Personal Handwriting Training (个人笔迹训练)**, create a writer profile, and explicitly assign the task to that writer.
+5. After checking each character, select **Verified character by character; eligible for training (已逐字校对，可用于训练)**. You can also confirm a whole page after reviewing every line.
+6. Once the dataset meets the minimum requirements, create a snapshot, start training manually, inspect the comparison results, and decide whether to activate the candidate model.
+
+Editing text, moving, splitting or merging line boxes, or rotating pages invalidates the affected training confirmations. Successful OCR or edited text is never automatically treated as human-verified data. Model switching and rerunning recognition preserve existing manual corrections.
+
+See the [detailed usage guide (Chinese)](docs/PORTABLE.md) for task compatibility and portable application instructions.
+
+### Training and evaluation
+
+The experimental minimum is **150 eligible, explicitly verified lines across at least 5 source pages**, with at least **90 / 20 / 20 lines** in the training / validation / test splits.
+
+- Split by complete pages at approximately 60% / 20% / 20%. Duplicate pages and line crops must not appear across different splits.
+- The first formal snapshot fixes the held-out validation and test pages. Newly added pages subsequently enter the training split.
+- Exclude blank, uncertain, invalidated, multiline, or overlength labels. Labels exceeding 128 tokens are rejected rather than silently truncated.
+- Use LoRA r=8, alpha=16, and dropout=0.05; batch size 1, gradient accumulation 8, learning rate 1e-4, and at most 20 epochs.
+- Select the best checkpoint by validation CER and stop after 3 consecutive epochs without improvement. Test data is not used for optimizer training.
+- Candidate models are never activated automatically. Retain adapters, the general model, published versions, and a rollback option.
+
+Each published merged model requires approximately another 1.3 GB. Reserve at least 4 GiB before starting training. The 150-line threshold is an experimental starting point, not an accuracy guarantee. Evaluate on held-out pages from the same writer.
+
+### Validation
+
+Local validation performed for the Handwriter 2.0 delivery includes:
+
+- **68 locally executed automated tests passed**, covering confirmation invalidation, legacy task migration, deduplication, page-based splitting, GUI threads, recovery, and export.
+- Real forward passes, backpropagation, and parameter updates on an RTX 5060 Laptop GPU; adapter saving, checkpoint recovery, merging, and model reload.
+- All 96 adapter tensors from a resumed run matched those from an uninterrupted two-step training run exactly.
+- The packaged EXE completed a small training smoke test, PDF recognition with both general and adapted models, and Word/TXT export under process-level network blocking.
+- The production data gate was validated separately using 5 synthetic pages containing 150 lines. Real handwriting training used a small public IAM sample and explicitly bypassed the normal minimum-data gate for internal functional testing.
+- The small-sample test showed no observed accuracy improvement and cannot establish performance for a real target writer.
+
+See the [validation report (Chinese)](验证报告.txt). These are local delivery validation records, not a claim that GitHub Actions or continuous integration has passed.
+
+Run the source tests with:
+
+~~~powershell
+$env:QT_QPA_PLATFORM = 'offscreen'
+.\.venv\Scripts\python.exe -m pytest tests -q --basetemp .\build\test-temp
+~~~
+
+Synthetic fixtures are generated automatically by the tests. IAM images and transcriptions are not distributed in this repository. If you obtain them separately, follow the [sample provenance and usage notes (Chinese)](tests/fixtures/SOURCES.md).
+
+### Packaging
+
+~~~powershell
+.\build.ps1
+~~~
+
+The output is dist/Handwriter-Personal/Handwriter.exe. This step packages the application runtime; general models can subsequently be prepared inside the application. The portable delivery with preloaded models is approximately 6.5 GiB. Keep the entire portable folder together.
+
+### Data and licensing
+
+Runtime directories such as models, projects, writers, and logs are excluded by .gitignore. Do not commit personal manuscripts, writer profiles, training data, model weights, or credentials.
+
+Third-party component and model notices are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and licenses/. A project-level license for the original application source has not yet been selected. See [publishing notes](docs/PUBLISHING.md).
+
+The review–train–evaluate workflow is inspired by eScriptorium. This application uses LoRA adaptation of its existing TrOCR model and does not bundle eScriptorium/Kraken services or their models.
