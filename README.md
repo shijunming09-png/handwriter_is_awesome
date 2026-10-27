@@ -115,6 +115,11 @@ models、projects、writers、logs 等运行目录由 .gitignore 排除。请勿
 
 本项目借鉴 eScriptorium 的“校对—训练—评估”流程，采用现有 TrOCR 的 LoRA 微调，不包含 eScriptorium/Kraken 服务或其模型。
 
+### 贡献者
+
+- [shijunming09-png](https://github.com/shijunming09-png)：项目发起、需求定义与功能规划。
+- **OpenAI Codex（AI 辅助开发）**：协助代码实现、测试验证、文档编写与源码发布。
+
 ---
 
 ## English
@@ -227,3 +232,8 @@ Runtime directories such as models, projects, writers, and logs are excluded by 
 Third-party component and model notices are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and licenses/. A project-level license for the original application source has not yet been selected. See [publishing notes](docs/PUBLISHING.md).
 
 The review–train–evaluate workflow is inspired by eScriptorium. This application uses LoRA adaptation of its existing TrOCR model and does not bundle eScriptorium/Kraken services or their models.
+
+### Contributors
+
+- [shijunming09-png](https://github.com/shijunming09-png): Project initiation, requirements definition, and feature planning.
+- **OpenAI Codex (AI-assisted development)**: Assistance with code implementation, testing and validation, documentation, and source publication.
